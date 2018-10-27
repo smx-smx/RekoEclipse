@@ -1,60 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
-<plugin
-   id="RekoEclipse.plugin"
-   version="0.0.1"
->
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="rekoeclipse.plugin.Application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="rekoeclipse.plugin.Application">
+         </run>
+      </application>
+   </extension>
    <extension
          id="RekoEclipse"
          point="org.eclipse.core.runtime.products">
       <product
-            application="RekoEclipse.plugin.RekoEclipse"
+            application="rekoeclipse.plugin.Application"
             name="RekoEclipse">
          <property
                name="appName"
                value="RekoEclipse">
          </property>
+         <property
+               name="applicationXMI"
+               value="RekoEclipse.plugin/Application.e4xmi">
+         </property>
       </product>
    </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="*">
-      </perspectiveExtension>
-   </extension>
-   <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            allPopups="false"
-            locationURI="menu:org.eclipse.ui.main.menu">
-         <menu
-               label="File">
-            <command
-                  commandId="org.eclipse.ui.file.exit"
-                  label="Exit"
-                  style="push">
-            </command>
-         </menu>
-      </menuContribution>
-   </extension>
-   <extension
-         id="RekoEclipse"
-         point="org.eclipse.core.runtime.applications">
-      <application
-            cardinality="singleton-global"
-            thread="main"
-            visible="true">
-         <run
-               class="rekoeclipse.Application">
-         </run>
-      </application>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectives">
-      <perspective
-            class="rekoeclipse.PerspectiveFactory"
-            id="MainPerspective"
-            name="name">
-      </perspective>
-   </extension>
+
 </plugin>

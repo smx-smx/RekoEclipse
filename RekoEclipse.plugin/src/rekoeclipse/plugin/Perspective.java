@@ -1,14 +1,11 @@
-package rekoeclipse;
+package rekoeclipse.plugin;
 
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-public class PerspectiveFactory implements IPerspectiveFactory {
+public class Perspective implements IPerspectiveFactory {
 
-	@Override
+	@Override	
 	public void createInitialLayout(IPageLayout layout) {
-		// TODO Auto-generated method stub
-		
 	}
-
 }
