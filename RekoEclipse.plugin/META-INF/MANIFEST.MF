@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: RekoEclipse
+Bundle-Name: Reko Decompiler
 Bundle-SymbolicName: RekoEclipse.plugin;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Require-Bundle: org.eclipse.core.runtime,

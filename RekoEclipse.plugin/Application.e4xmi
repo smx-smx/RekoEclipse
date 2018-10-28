@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_FO2xgNovEei0lcwezzxLkw" elementId="RekoEclipse.plugin.application">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_Q-GqENozEei0lcwezzxLkw" elementId="rekoeclipse.plugin.trimmedwindow.dummy" label="dummy"/>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_dMf5kNozEei0lcwezzxLkw" elementId="rekoeclipse.plugin.trimmedwindow.notsodummy" label="not so dummy"/>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_FO2xgNovEei0lcwezzxLkw" elementId="RekoEclipse.plugin.application">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_Q-GqENozEei0lcwezzxLkw" elementId="rekoeclipse.plugin.trimmedwindow.dummy" toBeRendered="false" visible="false" label="dummy"/>
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_dMf5kNozEei0lcwezzxLkw" elementId="rekoeclipse.plugin.trimmedwindow.notsodummy" label="">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_0T8ZMNrWEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.perspectivestack.0">
+      <children xsi:type="advanced:Perspective" xmi:id="_0lCJMNrWEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.perspective.0">
+        <children xsi:type="basic:PartStack" xmi:id="_01JBwNrWEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.partstack.0">
+          <children xsi:type="basic:Part" xmi:id="_1cvNQNrWEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.part.0"/>
+        </children>
+      </children>
+    </children>
+  </children>
   <addons xmi:id="_FO2xgdovEei0lcwezzxLkw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_FO2xgtovEei0lcwezzxLkw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_FO2xg9ovEei0lcwezzxLkw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

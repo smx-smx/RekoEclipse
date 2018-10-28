@@ -13,17 +13,18 @@
    </extension>
    <extension
          id="RekoEclipse"
+         name="Reko Decompiler"
          point="org.eclipse.core.runtime.products">
       <product
             application="rekoeclipse.plugin.Application"
-            name="RekoEclipse">
-         <property
-               name="appName"
-               value="RekoEclipse">
-         </property>
+            name="Reko Decompiler">
          <property
                name="applicationXMI"
                value="RekoEclipse.plugin/Application.e4xmi">
+         </property>
+         <property
+               name="appName"
+               value="RekoEclipse">
          </property>
       </product>
    </extension>
