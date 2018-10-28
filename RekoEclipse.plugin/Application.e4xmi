@@ -1,15 +1,67 @@
 <?xml version="1.0" encoding="ASCII"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_FO2xgNovEei0lcwezzxLkw" elementId="RekoEclipse.plugin.application">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_Q-GqENozEei0lcwezzxLkw" elementId="rekoeclipse.plugin.trimmedwindow.dummy" toBeRendered="false" visible="false" label="dummy"/>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_FO2xgNovEei0lcwezzxLkw" elementId="rekoeclipse.application">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_dMf5kNozEei0lcwezzxLkw" elementId="rekoeclipse.plugin.trimmedwindow.notsodummy" label="">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_0T8ZMNrWEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.perspectivestack.0">
-      <children xsi:type="advanced:Perspective" xmi:id="_0lCJMNrWEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.perspective.0">
-        <children xsi:type="basic:PartStack" xmi:id="_01JBwNrWEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.partstack.0">
-          <children xsi:type="basic:Part" xmi:id="_1cvNQNrWEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.part.0"/>
+      <children xsi:type="advanced:Perspective" xmi:id="_0lCJMNrWEeimN44Aa95x4Q" elementId="rekoeclipse.perspective">
+        <tags>newtablook</tags>
+        <tags>org.eclipse.e4.primaryNavigationStack</tags>
+        <children xsi:type="basic:PartSashContainer" xmi:id="_T_oNMNrqEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.partsashcontainer.0" containerData="1000" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_WnVPQNrqEeimN44Aa95x4Q" elementId="org.eclipse.ui.views.PropertySheetMStack" containerData="3400">
+            <tags>newtablook</tags>
+            <tags>org.eclipse.e4.secondaryDataStack</tags>
+            <children xsi:type="advanced:Placeholder" xmi:id="_YMCjQNrqEeimN44Aa95x4Q" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_wao7oNryEeimN44Aa95x4Q"/>
+          </children>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_VXmFsNrqEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.partsashcontainer.1">
+            <children xsi:type="advanced:Placeholder" xmi:id="_VceaINr0EeimN44Aa95x4Q" elementId="org.eclipse.ui.editorss" ref="_RuTKINryEeimN44Aa95x4Q"/>
+            <children xsi:type="basic:PartStack" xmi:id="_a9VaoNr0EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.partstack.1">
+              <children xsi:type="advanced:Placeholder" xmi:id="_biG7oNr0EeimN44Aa95x4Q" elementId="org.eclipse.ui.views.PropertySheet" ref="_XuqKENryEeimN44Aa95x4Q"/>
+            </children>
+          </children>
         </children>
       </children>
     </children>
+    <sharedElements xsi:type="advanced:Area" xmi:id="_RuTKINryEeimN44Aa95x4Q" elementId="org.eclipse.ui.editorss">
+      <children xsi:type="basic:PartStack" xmi:id="_Tp4tENryEeimN44Aa95x4Q" elementId="org.eclipse.e4.primaryDataStack">
+        <tags>newtablook</tags>
+        <tags>org.eclipse.e4.primaryDataStack</tags>
+        <tags>EditorStack</tags>
+      </children>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_XuqKENryEeimN44Aa95x4Q" elementId="org.eclipse.ui.views.PropertySheet" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Properties" iconURI="platform:/plugin/org.eclipse.ui.views//icons/full/eview16/prop_ps.gif" closeable="true">
+      <tags>View</tags>
+      <tags>categoryTag:General</tags>
+      <menus xmi:id="_gs20INryEeimN44Aa95x4Q" elementId="org.eclipse.ui.views.PropertySheet">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_tiqo8NryEeimN44Aa95x4Q" elementId="org.eclipse.ui.views.PropertySheet"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_wao7oNryEeimN44Aa95x4Q" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources//icons/full/eview16/resource_persp.gif">
+      <tags>View</tags>
+      <tags>categoryTag:General</tags>
+      <menus xmi:id="_3UdTINryEeimN44Aa95x4Q" elementId="org.eclipse.ui.navigator.ProjectExplorer">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_6qOVENryEeimN44Aa95x4Q" elementId="org.eclipse.ui.navigator.ProjectExplorer#PopupMenu">
+        <tags>menuContribution:popup</tags>
+        <tags>popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu</tags>
+      </menus>
+      <toolbar xmi:id="__KNucNryEeimN44Aa95x4Q" elementId="org.eclipse.ui.navigator.ProjectExplorer"/>
+    </sharedElements>
+    <trimBars xmi:id="_C-_noNrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.main.toolbar"/>
+    <trimBars xmi:id="_F2eyINrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.trim.status" side="Bottom">
+      <children xsi:type="menu:ToolControl" xmi:id="_H9hXINrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.StatusLine" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
+        <tags>stretch</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_MYGsENrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.HeapStatus" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim"/>
+      <children xsi:type="menu:ToolControl" xmi:id="_Pf15ENrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.ProgressBar" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim"/>
+    </trimBars>
   </children>
+  <descriptors xmi:id="_eV8KoNrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources//icons/full/eview16/resource_persp.gif" category="org.eclipse.e4.primaryNavigationStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <variables>View</variables>
+    <variables>categoryTag:General</variables>
+  </descriptors>
   <addons xmi:id="_FO2xgdovEei0lcwezzxLkw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_FO2xgtovEei0lcwezzxLkw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_FO2xg9ovEei0lcwezzxLkw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

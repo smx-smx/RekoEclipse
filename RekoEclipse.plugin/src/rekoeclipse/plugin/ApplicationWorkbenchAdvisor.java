@@ -6,7 +6,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 
 	@Override
 	public String getInitialWindowPerspectiveId() {
-		return null;
+		return "rekoeclipse.perspective";
 	}
 
 }

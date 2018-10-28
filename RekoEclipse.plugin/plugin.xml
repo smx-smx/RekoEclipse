@@ -3,7 +3,7 @@
 <plugin>
 
    <extension
-         id="rekoeclipse.plugin.Application"
+         id="rekoeclipse.application"
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
@@ -12,15 +12,19 @@
       </application>
    </extension>
    <extension
-         id="RekoEclipse"
+         id="rekoeclipse.product"
          name="Reko Decompiler"
          point="org.eclipse.core.runtime.products">
       <product
-            application="rekoeclipse.plugin.Application"
+            application="rekoeclipse.application"
             name="Reko Decompiler">
          <property
                name="applicationXMI"
-               value="RekoEclipse.plugin/Application.e4xmi">
+               value="com.smx.rekoeclipse/Application.e4xmi">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/revenge-44x44.png">
          </property>
          <property
                name="appName"
