@@ -4,5 +4,7 @@ Bundle-Name: Reko Decompiler
 Bundle-SymbolicName: com.smx.rekoeclipse;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.ui
+ org.eclipse.ui,
+ org.eclipse.e4.core.di.annotations,
+ com.google.gson
 Automatic-Module-Name: RekoEclipse.plugin

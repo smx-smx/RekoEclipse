@@ -14,6 +14,8 @@
 
 	<properties>
 		<tycho-version>0.22.0</tycho-version>
+		<deps.bundleName>RekoEclipse.deps</deps.bundleName>
+		<deps.namespace>RekoEclipse.deps</deps.namespace>
 	</properties>
 
 	<repositories>
@@ -21,6 +23,11 @@
 			<id>eclipse-latest</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/latest</url>
+		</repository>
+		<repository>
+			<id>RekoEclipse.dependencies</id>
+			<layout>p2</layout>
+			<url>file:///${maven.multiModuleProjectDirectory}/RekoEclipse.dependencies/target/repository</url>
 		</repository>
 	</repositories>
 

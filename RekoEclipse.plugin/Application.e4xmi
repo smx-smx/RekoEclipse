@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_FO2xgNovEei0lcwezzxLkw" elementId="rekoeclipse.application">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_dMf5kNozEei0lcwezzxLkw" elementId="rekoeclipse.plugin.trimmedwindow.notsodummy" label="">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_dMf5kNozEei0lcwezzxLkw" elementId="rekoeclipse.plugin.trimmedwindow.notsodummy" selectedElement="_0T8ZMNrWEeimN44Aa95x4Q" label="" iconURI="platform:/plugin/com.smx.rekoeclipse/icons/reko.png">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_0T8ZMNrWEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.perspectivestack.0">
       <children xsi:type="advanced:Perspective" xmi:id="_0lCJMNrWEeimN44Aa95x4Q" elementId="rekoeclipse.perspective">
         <tags>newtablook</tags>
@@ -20,6 +20,19 @@
         </children>
       </children>
     </children>
+    <mainMenu xmi:id="_cRGO8Nr8EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.menu.0">
+      <children xsi:type="menu:Menu" xmi:id="_iacLwNr8EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.menu.file" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_jI50QNr8EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.open" label="Open..." iconURI="platform:/plugin/com.smx.rekoeclipse/icons/fldr_obj.png" command="_Y1Ca8NsAEeimN44Aa95x4Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_lmX8QNr8EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.openas" label="Open As..." iconURI="platform:/plugin/com.smx.rekoeclipse/icons/fldr_obj.png"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_6_cgsNr-EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.menuseparator.0"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_LFDkQNr9EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.save" label="Save" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/save_edit.png"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_SQCkQNr9EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.close" label="Close" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/obj16/cprj_obj.png"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_7vIRMNr-EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.menuseparator.1"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_jwuMwNr9EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.addbinaryfile" label="Add binary file..." iconURI="platform:/plugin/com.smx.rekoeclipse/icons/binary_project.gif"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="__KVCMNr9EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.addmetadatafile" label="Add metadata file..." iconURI="platform:/plugin/com.smx.rekoeclipse/icons/metadata_repo_obj.png"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_COkPQNr-EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.addassemblerfile" label="Add assembler file..."/>
+      </children>
+    </mainMenu>
     <sharedElements xsi:type="advanced:Area" xmi:id="_RuTKINryEeimN44Aa95x4Q" elementId="org.eclipse.ui.editorss">
       <children xsi:type="basic:PartStack" xmi:id="_Tp4tENryEeimN44Aa95x4Q" elementId="org.eclipse.e4.primaryDataStack">
         <tags>newtablook</tags>
@@ -58,10 +71,12 @@
       <children xsi:type="menu:ToolControl" xmi:id="_Pf15ENrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.ProgressBar" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim"/>
     </trimBars>
   </children>
+  <handlers xmi:id="_eRKFYNsAEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handler.0" contributionURI="bundleclass://com.smx.rekoeclipse/rekoeclipse.handlers.OpenCommand" command="_Y1Ca8NsAEeimN44Aa95x4Q"/>
   <descriptors xmi:id="_eV8KoNrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources//icons/full/eview16/resource_persp.gif" category="org.eclipse.e4.primaryNavigationStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
     <variables>View</variables>
     <variables>categoryTag:General</variables>
   </descriptors>
+  <commands xmi:id="_Y1Ca8NsAEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.command.open" commandName="Open"/>
   <addons xmi:id="_FO2xgdovEei0lcwezzxLkw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_FO2xgtovEei0lcwezzxLkw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_FO2xg9ovEei0lcwezzxLkw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
