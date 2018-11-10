@@ -1,4 +1,4 @@
-package rekoeclipse;
+package rekoeclipse.api;
 
 import java.util.Map;
 

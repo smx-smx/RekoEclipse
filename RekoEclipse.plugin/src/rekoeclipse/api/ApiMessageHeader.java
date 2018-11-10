@@ -1,4 +1,7 @@
-package rekoeclipse;
+package rekoeclipse.api;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 public class ApiMessageHeader {
 	private ApiRequestType messageType;
@@ -36,5 +39,14 @@ public class ApiMessageHeader {
 		this.sequenceNumber = sequenceNumber;
 	}
 	
-	
+	public static ApiMessageHeader deserialize(byte[] data){
+		ByteBuffer buf = ByteBuffer.wrap(data);
+		buf.order(ByteOrder.LITTLE_ENDIAN);
+		
+		return new ApiMessageHeader(
+				ApiRequestType.fromValue(buf.get()),
+				buf.getInt(),
+				buf.getInt()
+		);
+	}
 }

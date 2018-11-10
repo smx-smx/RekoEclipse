@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="RekoEclipse" uid="RekoEclipse" id="rekoeclipse.product" application="rekoeclipse.application" useFeatures="false" includeLaunchers="true">
+<product name="RekoEclipse" uid="RekoEclipse" id="rekoeclipse.product" application="rekoeclipse.application" version="0.0.1" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/RekoEclipse.plugin/icons/revenge-44x44.png"/>
@@ -11,8 +11,10 @@
    </configIni>
 
    <launcherArgs>
-      <programArgs>-clean -clearPersistedState
+      <programArgs>-console 1337 -debug -consoleLog -clean -clearPersistedState
       </programArgs>
+      <vmArgs>-Dequinox.ds.print=true -Dequinox.ds.debug=true -Dreko.path=&quot;G:/projects/reko-master2/src/Drivers/ApiServer/bin/x64/Debug/Reko.ApiServer.exe&quot;
+      </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
@@ -25,10 +27,12 @@
       </win>
    </launcher>
 
+
    <vm>
    </vm>
 
    <plugins>
+      <plugin id="com.google.gson"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="com.smx.rekoeclipse"/>
       <plugin id="javax.annotation"/>
@@ -42,6 +46,8 @@
       <plugin id="org.apache.commons.io"/>
       <plugin id="org.apache.commons.jxpath"/>
       <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.apache.felix.gogo.runtime"/>
+      <plugin id="org.apache.felix.gogo.shell"/>
       <plugin id="org.apache.felix.scr"/>
       <plugin id="org.apache.xmlgraphics"/>
       <plugin id="org.eclipse.ant.core"/>
@@ -97,6 +103,7 @@
       <plugin id="org.eclipse.equinox.app"/>
       <plugin id="org.eclipse.equinox.bidi"/>
       <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.console"/>
       <plugin id="org.eclipse.equinox.ds"/>
       <plugin id="org.eclipse.equinox.event"/>
       <plugin id="org.eclipse.equinox.frameworkadmin"/>
@@ -194,6 +201,14 @@
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <property name="ds.delayed.keepInstances" value="true" />
    </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
 
 </product>

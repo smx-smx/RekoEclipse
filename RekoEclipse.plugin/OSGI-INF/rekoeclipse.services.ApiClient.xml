@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" activate="activate" name="rekoeclipse.services.ApiClient">
+   <service>
+      <provide interface="rekoeclipse.services.ApiClient"/>
+   </service>
+   <reference cardinality="1..1" field="hostSvc" interface="rekoeclipse.services.RekoHostService" name="hostSvc"/>
+   <implementation class="rekoeclipse.services.ApiClient"/>
+</scr:component>

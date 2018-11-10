@@ -1,7 +1,8 @@
-package rekoeclipse;
+package rekoeclipse.api;
 
 public enum ApiRequestType {
-	REQUEST((byte)0);
+	REQUEST((byte)0),
+	EVENT((byte)1);
 	
 	private final byte value;
 	private ApiRequestType(byte value) {
@@ -9,5 +10,9 @@ public enum ApiRequestType {
 	}
 	public byte getValue() {
 		return value;
+	}
+	
+	public static ApiRequestType fromValue(byte value){
+		return values()[value];
 	}
 }
