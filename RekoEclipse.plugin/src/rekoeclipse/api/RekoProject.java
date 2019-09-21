@@ -5,15 +5,14 @@
  */
 package rekoeclipse.api;
 
-import java.util.Map;
-
 /**
  *
  * @author sm
  */
-public class ApiReplyMessage {
-	private int seqno;
-	private int errcode;
-	private String errstr;
-	private Map<String, Object> data;
+public class RekoProject extends RestAbstractObject<RekoProject> {
+	
+	public RekoProject(String urlPath) {
+		super(urlPath);
+	}
+	
 }

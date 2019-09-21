@@ -37,26 +37,7 @@
       </product>
    </extension>
    <extension
-         point="org.eclipse.ui.navigator.navigatorContent">
-      <navigatorContent
-            contentProvider="ProgramContentProvider"
-            id="RekoEclipse.plugin.navigatorContent1"
-            name="name">
-      </navigatorContent>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="org.eclipse.ui.resourcePerspective">
-         <view
-               id="com.rekoeclipse.navigator"
-               ratio="0.5"
-               relationship="stack"
-               relative="org.eclipse.ui.navigator.ProjectExplorer">
-         </view>
-      </perspectiveExtension>
-   </extension>
-   <extension
+         id="rekoeclipse.viewer"
          point="org.eclipse.ui.navigator.viewer">
       <viewerActionBinding
             viewerId="org.eclipse.ui.navigator.ProjectExplorer">
@@ -70,16 +51,8 @@
             viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
             <contentExtension
-                  pattern="org.eclipse.ui.navigator.resources.filters.*">
-            </contentExtension>
-            <contentExtension
-                  pattern="org.eclipse.ui.navigator.resources.linkHelper">
-            </contentExtension>
-            <contentExtension
-                  pattern="org.eclipse.ui.navigator.resources.workingSets">
-            </contentExtension>
-            <contentExtension
-                  pattern="org.eclipse.ui.navigator.resourceContent">
+                  isRoot="true"
+                  pattern="RekoEclipse.plugin.navigatorContent1">
             </contentExtension>
          </includes>
       </viewerContentBinding>
@@ -90,7 +63,16 @@
             activeByDefault="true"
             contentProvider="rekoeclipse.content.ProgramContentProvider"
             id="RekoEclipse.plugin.navigatorContent1"
-            name="name">
+            labelProvider="rekoeclipse.content.ProgramLabelProvider"
+            name="name"
+            priority="highest">
+         <triggerPoints>
+            <or>
+               <equals
+                     value="true">
+               </equals>
+            </or>
+         </triggerPoints>
       </navigatorContent>
    </extension>
 

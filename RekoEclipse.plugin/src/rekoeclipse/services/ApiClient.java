@@ -10,6 +10,8 @@ import java.time.Duration;
 import java.util.Map;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 import org.osgi.service.component.ComponentContext;
 
@@ -18,15 +20,17 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-import rekoeclipse.api.ApiMessageHeader;
-import rekoeclipse.api.ApiMessageListener;
-import rekoeclipse.api.ApiReplyMessage;
-import rekoeclipse.api.ApiRequestMessage;
-import rekoeclipse.api.ApiRequestPayload;
-import rekoeclipse.api.HttpMethod;
+import rekoeclipse.api.protocol.ApiMessageHeader;
+import rekoeclipse.api.protocol.ApiMessageListener;
+import rekoeclipse.api.protocol.ApiRestReply;
+import rekoeclipse.api.protocol.ApiRequestMessage;
+import rekoeclipse.api.protocol.ApiRestRequest;
+import rekoeclipse.api.protocol.HttpMethod;
+import rekoeclipse.plugin.OsgiServiceBase;
 
-@Component(service = ApiClient.class)
-public class ApiClient implements AutoCloseable {
+@Component(service = ApiClient.class, immediate=true)
+public class ApiClient extends OsgiServiceBase implements AutoCloseable {
+
 	private final String API_PREFIX = "/reko/v1/";
 
 	private WebSocket webSocket;
@@ -44,12 +48,19 @@ public class ApiClient implements AutoCloseable {
 	protected void activate(ComponentContext ctx) {
 		String wsPath = String.format("ws://127.0.0.1:%d%s", hostSvc.getSocketPort(), API_PREFIX);
 
-		HttpClient client = HttpClient.newBuilder().version(Version.HTTP_1_1).connectTimeout(Duration.ofSeconds(5))
+		HttpClient client = HttpClient
+				.newBuilder()
+				.version(Version.HTTP_1_1)
+				.connectTimeout(Duration.ofSeconds(5))
 				.build();
 
 		try {
-			webSocket = client.newWebSocketBuilder().subprotocols("reko").connectTimeout(Duration.ofSeconds(5))
-					.buildAsync(new URI(wsPath), listener).join();
+			webSocket = client
+					.newWebSocketBuilder()
+					.subprotocols("reko")
+					.connectTimeout(Duration.ofSeconds(5))
+					.buildAsync(new URI(wsPath), listener)
+					.join();
 		} catch (URISyntaxException ex) {
 			throw new Error(ex);
 		}
@@ -64,7 +75,7 @@ public class ApiClient implements AutoCloseable {
 		this.webSocket.sendClose(WebSocket.NORMAL_CLOSURE, "Terminating");
 	}
 
-	private ApiRequestMessage createRestRequest(ApiRequestPayload restReq) {
+	private ApiRequestMessage createRestRequest(ApiRestRequest restReq) {
 		String reqJson = new Gson().toJson(restReq);
 
 		ApiMessageHeader header = ApiMessageHeader.newRestRequest(reqJson.length(), lastSeqNo);
@@ -81,21 +92,23 @@ public class ApiClient implements AutoCloseable {
 		ApiMessageHeader header = msg.getHeader();
 		listener.registerRequest(header);
 
-		// send message asynchronously
-		webSocket.sendBinary(buf, true);
-
-		// wait for its reply
-		return listener.waitForMessage(header.getSequenceNumber());
+		return webSocket.sendBinary(buf, true).thenCompose(websocket -> {
+			return listener.waitForMessage(header.getSequenceNumber());
+		});
 	}
 
-	public CompletableFuture<ApiReplyMessage> sendRestRequest(HttpMethod method, String url, Map<String, Object> data) {
-		ApiRequestPayload body = new ApiRequestPayload(method.name(), url, data);
+	public CompletableFuture<ApiRestReply> sendRestRequest(HttpMethod method, String url){
+		return sendRestRequest(method, url, new HashMap<String, Object>());
+	}
+
+	public CompletableFuture<ApiRestReply> sendRestRequest(HttpMethod method, String url, Map<String, Object> data) {
+		ApiRestRequest body = new ApiRestRequest(method.name(), url, data);
 		ApiRequestMessage message = createRestRequest(body);
 
 		return sendRequest(message).thenApply((replyData) -> {
 			String json = new String(replyData);
-			return new Gson().fromJson(json, ApiReplyMessage.class);
+			ApiRestReply reply = new Gson().fromJson(json, ApiRestReply.class);
+			return reply;
 		});
 	}
-
 }

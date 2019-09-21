@@ -1,4 +1,4 @@
-package rekoeclipse.api;
+package rekoeclipse.api.protocol;
 
 public enum HttpMethod {
 	GET,

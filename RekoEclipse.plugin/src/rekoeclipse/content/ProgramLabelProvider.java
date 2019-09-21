@@ -8,38 +8,33 @@ public class ProgramLabelProvider implements ILabelProvider {
 
 	@Override
 	public void addListener(ILabelProviderListener listener) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public boolean isLabelProperty(Object element, String property) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public void removeListener(ILabelProviderListener listener) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public Image getImage(Object element) {
-		// TODO Auto-generated method stub
+		//return PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJ_FILE);
 		return null;
 	}
 
 	@Override
 	public String getText(Object element) {
-		// TODO Auto-generated method stub
-		return null;
+		return element.toString();
 	}
 
 }

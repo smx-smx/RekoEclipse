@@ -1,14 +1,14 @@
-package rekoeclipse.api;
+package rekoeclipse.api.protocol;
 
 import java.util.Map;
 
-public class ApiRequestPayload {
+public class ApiRestRequest {
 	private String method;
 	private String url;
 	
 	private Map<String, Object> data;
 	
-	public ApiRequestPayload(String method, String url, Map<String, Object> data) {
+	public ApiRestRequest(String method, String url, Map<String, Object> data) {
 		setMethod(method);
 		setUrl(url);
 		setData(data);

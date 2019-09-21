@@ -1,29 +1,29 @@
-package rekoeclipse.api;
+package rekoeclipse.api.protocol;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 public class ApiMessageHeader {
-	private ApiRequestType messageType;
+	private ApiMessageType messageType;
 	private int dataLength;
 	private int sequenceNumber;
 	
 	public static final int SIZE = (4 * 2) + 1; 
 	
-	private ApiMessageHeader(ApiRequestType type, int dataLength, int sequenceNumber) {
+	private ApiMessageHeader(ApiMessageType type, int dataLength, int sequenceNumber) {
 		setMessageType(type);
 		setDataLength(dataLength);
 		setSequenceNumber(sequenceNumber);
 	}
 	
 	public static ApiMessageHeader newRestRequest(int dataLength, int sequenceNumber) {
-		return new ApiMessageHeader(ApiRequestType.REQUEST, dataLength, sequenceNumber);
+		return new ApiMessageHeader(ApiMessageType.REQUEST, dataLength, sequenceNumber);
 	}
 	
-	public ApiRequestType getMessageType() {
+	public ApiMessageType getMessageType() {
 		return messageType;
 	}
-	private void setMessageType(ApiRequestType messageType) {
+	private void setMessageType(ApiMessageType messageType) {
 		this.messageType = messageType;
 	}
 	public int getDataLength() {
@@ -43,10 +43,14 @@ public class ApiMessageHeader {
 		ByteBuffer buf = ByteBuffer.wrap(data);
 		buf.order(ByteOrder.LITTLE_ENDIAN);
 		
+		byte msgType = buf.get();
+		int msgSize = buf.getInt();
+		int seqNum = buf.getInt();
+		
 		return new ApiMessageHeader(
-				ApiRequestType.fromValue(buf.get()),
-				buf.getInt(),
-				buf.getInt()
+				ApiMessageType.fromValue(msgType),
+				msgSize,
+				seqNum
 		);
 	}
 }

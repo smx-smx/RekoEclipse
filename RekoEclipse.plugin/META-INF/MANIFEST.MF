@@ -19,6 +19,5 @@ Require-Bundle: org.eclipse.core.runtime,
 Automatic-Module-Name: RekoEclipse.plugin
 Bundle-ActivationPolicy: lazy
 Import-Package: javax.annotation;version="1.2.0"
-Service-Component: OSGI-INF/rekoeclipse.handlers.OpenCommand.xml,
- OSGI-INF/rekoeclipse.services.ApiClient.xml,
+Service-Component: OSGI-INF/rekoeclipse.services.ApiClient.xml,
  OSGI-INF/rekoeclipse.services.RekoHostService.xml

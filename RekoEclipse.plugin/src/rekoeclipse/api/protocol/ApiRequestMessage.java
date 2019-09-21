@@ -1,4 +1,4 @@
-package rekoeclipse.api;
+package rekoeclipse.api.protocol;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

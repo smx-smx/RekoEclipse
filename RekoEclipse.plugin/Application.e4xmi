@@ -15,6 +15,7 @@
             <children xsi:type="advanced:Placeholder" xmi:id="_VceaINr0EeimN44Aa95x4Q" elementId="org.eclipse.ui.editorss" ref="_RuTKINryEeimN44Aa95x4Q"/>
             <children xsi:type="basic:PartStack" xmi:id="_a9VaoNr0EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.partstack.1">
               <children xsi:type="advanced:Placeholder" xmi:id="_biG7oNr0EeimN44Aa95x4Q" elementId="org.eclipse.ui.views.PropertySheet" ref="_XuqKENryEeimN44Aa95x4Q"/>
+              <children xsi:type="basic:Part" xmi:id="_3JwCoPHVEeig4ZSpZFkqNQ" elementId="rekoeclipse.plugin.part.0" contributionURI="bundleclass://com.smx.rekoeclipse/rekoeclipse.widgets.Test"/>
             </children>
           </children>
         </children>
@@ -72,7 +73,7 @@
     </trimBars>
   </children>
   <children xsi:type="basic:Window" xmi:id="_I4dqAOOGEeiN-ultqlOIeg" elementId="rekoeclipse.plugin.apiconnect" toBeRendered="false" visible="false" label="Reko ApiServer Connection" iconURI="platform:/plugin/com.smx.rekoeclipse/icons/newconnect_wiz.png"/>
-  <handlers xmi:id="_eRKFYNsAEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handler.0" contributionURI="bundleclass://com.smx.rekoeclipse/rekoeclipse.api.api.handlers.OpenCommand" command="_Y1Ca8NsAEeimN44Aa95x4Q"/>
+  <handlers xmi:id="_eRKFYNsAEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handler.0" contributionURI="bundleclass://com.smx.rekoeclipse/rekoeclipse.handlers.OpenCommand" command="_Y1Ca8NsAEeimN44Aa95x4Q"/>
   <descriptors xmi:id="_eV8KoNrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources//icons/full/eview16/resource_persp.gif" category="org.eclipse.e4.primaryNavigationStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
     <variables>View</variables>
     <variables>categoryTag:General</variables>

@@ -2,7 +2,10 @@ package rekoeclipse.plugin;
 
 import java.util.Queue;
 
+import javax.inject.Inject;
+
 import org.eclipse.core.internal.runtime.InternalPlatform;
+import org.eclipse.e4.core.di.extensions.OSGiBundle;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.osgi.framework.BundleContext;
@@ -27,15 +30,7 @@ public class AppShutdownStartedEventHandler implements EventHandler {
 	@Override
 	public void handleEvent(Event event) {
 		eventBroker.unsubscribe(this);
-		
-		BundleContext context = InternalPlatform
-				.getDefault()
-				.getBundleContext();
-		
-	
-		ServiceReference ref = context.getServiceReference(RekoHostService.class.getName());
-		
-		RekoHostService hostSvc = (RekoHostService) context.getService(ref);
+		RekoHostService hostSvc = PluginContext.getService(RekoHostService.class);
 		hostSvc.close();
 	}
 }
