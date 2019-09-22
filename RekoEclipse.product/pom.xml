@@ -46,7 +46,7 @@
 				<configuration>
 					<products>
 						<product>
-							<id>RekoEclipse</id>
+							<id>RekoEclipse</id>							
 						</product>
 					</products>
 				</configuration>

@@ -7,16 +7,16 @@ package rekoeclipse.api;
 
 import javax.inject.Inject;
 import org.eclipse.e4.core.di.extensions.Service;
-import rekoeclipse.services.ApiClient;
+//import rekoeclipse.services.ApiClient;
 
 /**
  *
  * @author sm
  */
 public abstract class RestAbstractObject<T> {
-	@Inject
-	@Service
-	private ApiClient client;
+	//@Inject
+	//@Service
+	//private ApiClient client;
 	
 	private final String objectUrl;
 	

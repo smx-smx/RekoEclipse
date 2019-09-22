@@ -8,12 +8,13 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>RekoEclipse.dependencies</module>
 		<module>RekoEclipse.product</module>
 		<module>RekoEclipse.plugin</module>
 	</modules>
 
 	<properties>
-		<tycho-version>1.2.0</tycho-version>
+		<tycho-version>1.4.0</tycho-version>
 		<deps.bundleName>RekoEclipse.deps</deps.bundleName>
 		<deps.namespace>RekoEclipse.deps</deps.namespace>
 		<rootPath>${basedir}</rootPath>
@@ -232,46 +233,104 @@
 			Illegal character in path at index 10:
 			file:///D:\eclipse-workspace\RekoEclipse.root/RekoEclipse.dependencies/target/repository -> [Help 1]
 		-->
-		<!--
 		<profile>
 			<id>tycho-run</id>
 			<build>
 				<plugins>
 					<plugin>
+						<groupId>org.codehaus.groovy.maven</groupId>
+						<artifactId>gmaven-plugin</artifactId>
+						<version>1.0</version>
+						<executions>
+							<execution>
+								<id>set-unixy_build_directory!</id>
+								<phase>compile</phase>
+								<goals>
+									<goal>execute</goal>
+								</goals>
+								<configuration>
+									<classpath>
+										<element>
+											<groupId>commons-lang</groupId>
+											<artifactId>commons-lang</artifactId>
+											<version>2.4</version>
+										</element>
+									</classpath>
+									<source>
+										project.properties.rootPathFwd = project.basedir.absolutePath.replace('\\','/');
+									</source>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 						<groupId>org.eclipse.tycho.extras</groupId>
 						<artifactId>tycho-eclipserun-plugin</artifactId>
 						<version>${tycho-version}</version>
 						<configuration>
+							<addDefaultDependencies>true</addDefaultDependencies>
 							<applicationsArgs>
+								<args>-product rekoeclipse.product</args>
+								<args>-consoleLog</args>
+								<args>-console 1337</args>
 								<args>-clean</args>
 								<args>-clearPersistedState</args>
 							</applicationsArgs>
+							<jvmArgs>
+								<args>-Dequinox.ds.print=true</args>
+								<args>-Dequinox.ds.debug=true</args>
+								<args>-Declipse.pde.launch=true</args>
+								<args>-Dfile.encoding=utf8</args>
+								<args>-Dosgi.console.enable.builtin=true</args>
+								<args>-Dreko.path="G:/projects/reko-master2/src/Drivers/ApiServer/bin/x64/Debug/Reko.ApiServer.exe"</args>						
+							</jvmArgs>
+							<!--
+							<project>
+								<artifactId>com.smx.rekoeclipse</artifactId>
+							</project>
+							-->
 							<repositories>
 								<repository>
 									<id>eclipse-latest</id>
 									<layout>p2</layout>
 									<url>http://download.eclipse.org/releases/latest</url>
 								</repository>
+								<!--<repository>
+									<id>eclipse-photon</id>
+									<layout>p2</layout>
+									<url>http://download.eclipse.org/releases/photon</url>
+								</repository>-->
+								<repository>
+									<id>RekoEclipse</id>
+									<layout>p2</layout>
+									<url>file:///${rootPathFwd}/RekoEclipse.product/target/repository</url>
+								</repository>
 								<repository>
 									<id>RekoEclipse.dependencies</id>
 									<layout>p2</layout>
-									<url>file:///${rootPath}/RekoEclipse.dependencies/target/repository</url>
+									<url>file:///${rootPathFwd}/RekoEclipse.dependencies/target/repository</url>
 								</repository>
 							</repositories>
+							<dependencies>
+								<dependency>
+									<artifactId>com.smx.rekoeclipse</artifactId>
+									<version>0.0.1</version>
+									<type>eclipse-plugin</type>
+								</dependency>
+							</dependencies>
 						</configuration>
 						<executions>
 							<execution>
 								<goals>
 									<goal>eclipse-run</goal>
 								</goals>
-								<phase>compile</phase>
+								<phase>test</phase>
 							</execution>
 						</executions>
 					</plugin>
 				</plugins>
 			</build>
 		</profile>
-		-->
 	</profiles>
 	
 	<build>

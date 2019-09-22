@@ -1,11 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.smx</groupId>
 	<version>0.0.1-SNAPSHOT</version>
 	<artifactId>RekoEclipse.dependencies</artifactId>
 	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>com.smx</groupId>
+		<artifactId>RekoEclipse.root</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 
 	<build>
 		<plugins>
@@ -15,13 +21,20 @@
 				<version>1.3.0</version>
 				<executions>
 					<execution>
-						<id>default-cli</id>
+						<id>generate-p2-site</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>site</goal>
+						</goals>
 						<configuration>
 							<artifacts>
 								<!-- specify your depencies here -->
 								<!-- groupId:artifactId:version -->
 								<artifact>
 									<id>com.google.code.gson:gson:2.8.5</id>
+								</artifact>
+								<artifact>
+									<id>com.microsoft.signalr:signalr:3.0.0-preview-19075-0444</id>
 								</artifact>
 							</artifacts>
 						</configuration>

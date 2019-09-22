@@ -1,30 +1,25 @@
 package rekoeclipse.content;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.extensions.Service;
 import org.eclipse.jface.viewers.ITreeContentProvider;
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import rekoeclipse.api.protocol.ApiRestReply;
-import rekoeclipse.api.protocol.HttpMethod;
-import rekoeclipse.plugin.Activator;
-import rekoeclipse.plugin.PluginContext;
-
 import rekoeclipse.services.ApiClient;
+
+//import rekoeclipse.services.ApiClient;
 
 public class ProgramContentProvider implements ITreeContentProvider {
 
-	private ApiClient client = PluginContext.getService(ApiClient.class);
-	
-	
+	@Inject
+	@Service
+	private ApiClient client;
+		
 	@Override
 	public Object[] getElements(Object inputElement) {
-		ApiRestReply reply = client.sendRestRequest(HttpMethod.GET, "/projects").join();
-		reply.getData().forEach((key, value) -> {
-			System.out.println(key);
-		});
+		//ApiRestReply reply = client.sendRestRequest(HttpMethod.GET, "/projects").join();
+		//reply.getData().forEach((key, value) -> {
+		//	System.out.println(key);
+		//});
 		
 		// return getChildren(inputElement);
 		System.out.println("THAT'S IT, I'M TRIGGERED!!!  :@ :@");

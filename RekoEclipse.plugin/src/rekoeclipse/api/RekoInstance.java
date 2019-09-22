@@ -3,7 +3,7 @@ package rekoeclipse.api;
 import java.util.List;
 import javax.inject.Inject;
 import org.eclipse.e4.core.di.extensions.Service;
-import rekoeclipse.services.ApiClient;
+//import rekoeclipse.services.ApiClient;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,9 +16,9 @@ import rekoeclipse.services.ApiClient;
  * @author sm
  */
 public class RekoInstance {
-	@Inject
-	@Service
-	private ApiClient client;
+	//@Inject
+	//@Service
+	//private ApiClient client;
 	
 	public List<RekoProject> getProjects(){
 		return null;
