@@ -36,6 +36,9 @@
 								<artifact>
 									<id>com.microsoft.signalr:signalr:3.0.0-preview-19075-0444</id>
 								</artifact>
+								<artifacts>
+									<id>org.slf4j:slf4j-simple:1.7.28</id>
+								</artifacts>
 							</artifacts>
 						</configuration>
 					</execution>

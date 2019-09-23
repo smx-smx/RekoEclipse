@@ -8,14 +8,17 @@ package rekoeclipse.services;
 import com.microsoft.signalr.HubConnection;
 import com.microsoft.signalr.HubConnectionBuilder;
 import io.reactivex.Completable;
+import javax.inject.Singleton;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import rekoeclipse.models.MenuHierarchy;
 import rekoeclipse.plugin.OsgiServiceBase;
 /**
  *
  * @author sm
  */
+@Singleton
 @Component(service = ApiClient.class)
 public class ApiClient extends OsgiServiceBase implements AutoCloseable {
 
@@ -29,6 +32,10 @@ public class ApiClient extends OsgiServiceBase implements AutoCloseable {
 	public ApiClient(){
 	}
 	
+	public MenuHierarchy getMenus(){
+		return connection.invoke(MenuHierarchy.class, "HelloWorld").blockingGet();
+	}
+	
 	@Activate
 	protected void activate(ComponentContext ctx){
 		this.connection = HubConnectionBuilder
@@ -36,6 +43,6 @@ public class ApiClient extends OsgiServiceBase implements AutoCloseable {
 				.shouldSkipNegotiate(true)
 				.build();
 		
-		this.connection.start();
+		this.connection.start().blockingAwait();
 	}
 }

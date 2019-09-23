@@ -21,9 +21,13 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime;bundle-version="3.16.0",
  javax.inject,
  org.eclipse.e4.core.di.extensions,
- org.eclipse.e4.core.di.annotations
-Automatic-Module-Name: RekoEclipse.plugin
+ org.eclipse.e4.core.di.annotations,
+ com.google.gson,
+ org.eclipse.e4.ui.model.workbench,
+ org.eclipse.e4.ui.di
+Import-Package: javax.annotation;version="1.2.0",
+ javax.inject;version="1.0.0"
 Bundle-ActivationPolicy: lazy
-Import-Package: javax.annotation;version="1.2.0"
+Automatic-Module-Name: RekoEclipse.plugin
 Service-Component: OSGI-INF/rekoeclipse.services.RekoHostService.xml,
  OSGI-INF/rekoeclipse.services.ApiClient.xml

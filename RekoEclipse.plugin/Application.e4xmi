@@ -32,6 +32,7 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_jwuMwNr9EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.addbinaryfile" label="Add binary file..." iconURI="platform:/plugin/com.smx.rekoeclipse/icons/binary_project.gif"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="__KVCMNr9EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.addmetadatafile" label="Add metadata file..." iconURI="platform:/plugin/com.smx.rekoeclipse/icons/metadata_repo_obj.png"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_COkPQNr-EeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handledmenuitem.addassemblerfile" label="Add assembler file..."/>
+        <children xsi:type="menu:DynamicMenuContribution" xmi:id="_tkOlcN2LEemDkeci6kVGcg" elementId="rekoeclipse.plugin.menu.dynamic" label="Dynamic" contributionURI="bundleclass://com.smx.rekoeclipse/rekoeclipse.plugin.RekoMenu"/>
       </children>
     </mainMenu>
     <sharedElements xsi:type="advanced:Area" xmi:id="_RuTKINryEeimN44Aa95x4Q" elementId="org.eclipse.ui.editorss">

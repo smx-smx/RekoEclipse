@@ -8,7 +8,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	@Override
 	public String getInitialWindowPerspectiveId() {
 		return "rekoeclipse.perspective";
-	}
+	}	
 
 	@Override
 	public synchronized AbstractStatusHandler getWorkbenchErrorHandler() {
