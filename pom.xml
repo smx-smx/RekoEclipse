@@ -242,25 +242,6 @@
 				</plugins>
 			</build>
 		</profile>
-		
-		<!--
-			This WIP profile was going to be used to launch the RCP application from maven.
-			Sadly, tycho-eclipserun-plugin doesn't like backslashes in the repository path (when on windows)
-			
-			Failed to execute goal org.eclipse.tycho.extras:tycho-eclipserun-plugin:1.2.0:eclipse-run (default) on project RekoEclipse.root:
-			Unable to parse configuration of mojo org.eclipse.tycho.extras:tycho-eclipserun-plugin:1.2.0:eclipse-run for parameter url:
-			Cannot convert 'file:///D:\eclipse-workspace\RekoEclipse.root/RekoEclipse.dependencies/target/repository' to URI:
-			Illegal character in path at index 10:
-			file:///D:\eclipse-workspace\RekoEclipse.root/RekoEclipse.dependencies/target/repository -> [Help 1]
-		-->
-		<profile>
-			<id>tycho-run</id>
-			<build>
-				<plugins>
-
-				</plugins>
-			</build>
-		</profile>
 	</profiles>
 	
 	<build>
