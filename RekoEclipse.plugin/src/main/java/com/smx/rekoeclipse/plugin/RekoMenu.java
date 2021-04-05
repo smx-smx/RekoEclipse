@@ -8,8 +8,8 @@ import org.eclipse.e4.ui.di.AboutToShow;
 import org.eclipse.e4.ui.model.application.ui.menu.MDirectMenuItem;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenuElement;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenuFactory;
-import rekoeclipse.models.MenuHierarchy;
-import rekoeclipse.services.ApiClient;
+import com.smx.rekoeclipse.models.MenuHierarchy;
+import com.smx.rekoeclipse.services.ApiClient;
 
 public class RekoMenu {
 	@Inject

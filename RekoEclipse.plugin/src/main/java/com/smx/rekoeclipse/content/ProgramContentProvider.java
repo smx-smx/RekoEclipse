@@ -4,9 +4,9 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.extensions.Service;
 import org.eclipse.jface.viewers.ITreeContentProvider;
-import rekoeclipse.services.ApiClient;
+import com.smx.rekoeclipse.services.ApiClient;
 
-//import rekoeclipse.services.ApiClient;
+//import com.smx.rekoeclipse.services.ApiClient;
 
 public class ProgramContentProvider implements ITreeContentProvider {
 

@@ -11,8 +11,8 @@ import javax.inject.Singleton;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
-import rekoeclipse.models.MenuHierarchy;
-import rekoeclipse.plugin.OsgiServiceBase;
+import com.smx.rekoeclipse.models.MenuHierarchy;
+import com.smx.rekoeclipse.plugin.OsgiServiceBase;
 /**
  *
  * @author sm

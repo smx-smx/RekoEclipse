@@ -14,9 +14,7 @@
 	</modules>
 
 	<properties>
-		<tycho-version>1.4.0</tycho-version>
-		<deps.bundleName>RekoEclipse.deps</deps.bundleName>
-		<deps.namespace>RekoEclipse.deps</deps.namespace>
+		<tycho-version>2.0.0</tycho-version>
 		<rootPath>${basedir}</rootPath>
 	</properties>
 	

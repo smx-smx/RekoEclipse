@@ -10,8 +10,8 @@ import org.eclipse.e4.core.di.extensions.Service;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 
-import rekoeclipse.api.protocol.HttpMethod;
-//import rekoeclipse.services.ApiClient;
+import com.smx.rekoeclipse.api.protocol.HttpMethod;
+//import com.smx.rekoeclipse.services.ApiClient;
 
 public class OpenCommand {
 	

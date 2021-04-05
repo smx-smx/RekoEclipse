@@ -5,7 +5,7 @@ import org.eclipse.equinox.app.IApplicationContext;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventHandler;
 
-import rekoeclipse.services.RekoHostService;
+import com.smx.rekoeclipse.services.RekoHostService;
 
 public class AppShutdownStartedEventHandler implements EventHandler {
 	private final IEventBroker eventBroker;

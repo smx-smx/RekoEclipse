@@ -20,7 +20,7 @@ import org.osgi.service.component.annotations.Activate;
 
 import org.osgi.service.component.annotations.Component;
 
-import rekoeclipse.plugin.OsgiServiceBase;
+import com.smx.rekoeclipse.plugin.OsgiServiceBase;
 
 /**
  *
