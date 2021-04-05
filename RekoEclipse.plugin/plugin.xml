@@ -7,7 +7,7 @@
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
-               class="rekoeclipse.plugin.Application">
+               class="com.smx.rekoeclipse.plugin.Application">
          </run>
       </application>
    </extension>
@@ -32,7 +32,7 @@
          </property>
          <property
                name="lifeCycleURI"
-               value="bundleclass://com.smx.rekoeclipse/rekoeclipse.plugin.LifeCycleManager">
+               value="bundleclass://com.smx.rekoeclipse/com.smx.rekoeclipse.plugin.LifeCycleManager">
          </property>
       </product>
    </extension>
@@ -61,9 +61,9 @@
          point="org.eclipse.ui.navigator.navigatorContent">
       <navigatorContent
             activeByDefault="true"
-            contentProvider="rekoeclipse.content.ProgramContentProvider"
+            contentProvider="com.smx.rekoeclipse.content.ProgramContentProvider"
             id="RekoEclipse.plugin.navigatorContent1"
-            labelProvider="rekoeclipse.content.ProgramLabelProvider"
+            labelProvider="com.smx.rekoeclipse.content.ProgramLabelProvider"
             name="name"
             priority="highest">
          <triggerPoints>

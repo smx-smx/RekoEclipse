@@ -29,5 +29,5 @@ Import-Package: javax.annotation;version="1.2.0",
  javax.inject;version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: RekoEclipse.plugin
-Service-Component: OSGI-INF/rekoeclipse.services.RekoHostService.xml,
- OSGI-INF/rekoeclipse.services.ApiClient.xml
+Service-Component: OSGI-INF/com.smx.rekoeclipse.services.RekoHostService.xml,
+ OSGI-INF/com.smx.rekoeclipse.services.ApiClient.xml

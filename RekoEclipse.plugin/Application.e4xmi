@@ -74,7 +74,7 @@
     </trimBars>
   </children>
   <children xsi:type="basic:Window" xmi:id="_I4dqAOOGEeiN-ultqlOIeg" elementId="rekoeclipse.plugin.apiconnect" toBeRendered="false" visible="false" label="Reko ApiServer Connection" iconURI="platform:/plugin/com.smx.rekoeclipse/icons/newconnect_wiz.png"/>
-  <handlers xmi:id="_eRKFYNsAEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handler.0" contributionURI="bundleclass://com.smx.rekoeclipse/rekoeclipse.handlers.OpenCommand" command="_Y1Ca8NsAEeimN44Aa95x4Q"/>
+  <handlers xmi:id="_eRKFYNsAEeimN44Aa95x4Q" elementId="rekoeclipse.plugin.handler.0" contributionURI="bundleclass://com.smx.rekoeclipse/com.smx.rekoeclipse.handlers.OpenCommand" command="_Y1Ca8NsAEeimN44Aa95x4Q"/>
   <descriptors xmi:id="_eV8KoNrzEeimN44Aa95x4Q" elementId="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources//icons/full/eview16/resource_persp.gif" category="org.eclipse.e4.primaryNavigationStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
     <variables>View</variables>
     <variables>categoryTag:General</variables>
