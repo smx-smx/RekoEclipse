@@ -1,5 +1,5 @@
  
-package rekoeclipse.handlers;
+package com.smx.rekoeclipse.handlers;
 
 import java.util.HashMap;
 import javax.inject.Inject;
