@@ -44,13 +44,25 @@
 					<groupId>org.eclipse.platform</groupId>
 					<artifactId>org.eclipse.urischeme</artifactId>
 				</exclusion>
+				<!-- 1.7.700 has a broken javax.inject dependency (should be jakarta) -->
+				<exclusion>
+					<groupId>org.eclipse.platform</groupId>
+					<artifactId>org.eclipse.e4.core.di</artifactId>
+				</exclusion>
 			</exclusions>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.e4.core.di</artifactId>
+			<version>1.7.600</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.platform</groupId>
 			<artifactId>org.eclipse.urischeme</artifactId>
 			<version>1.1.200</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.platform</groupId>
@@ -156,11 +168,7 @@
 								<args>-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044</args>
 								<args>-Dreko.path="G:/projects/reko-master2/src/Drivers/ApiServer/bin/x64/Debug/Reko.ApiServer.exe"</args>						
 							</jvmArgs>
-							<!--
-							<project>
-								<artifactId>com.smx.rekoeclipse</artifactId>
-							</project>
-							-->
+
 							<repositories>
 								<repository>
 									<id>RekoEclipse</id>
@@ -199,38 +207,12 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.4.3</version>
 				<configuration>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
-			<!--
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<dependency-resolution>
-						<extraRequirements>
-							<requirement>
-								<type>eclipse-plugin</type>
-								<id>org.eclipse.equinox.console</id>
-								<versionRange>0.0.0</versionRange>
-							</requirement>
-						</extraRequirements>
-					</dependency-resolution>
-				</configuration>
-			</plugin>
-			-->
 		</plugins>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>

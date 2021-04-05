@@ -22,7 +22,7 @@
 				<executions>
 					<execution>
 						<id>generate-p2-site</id>
-						<phase>compile</phase>
+						<phase>package</phase>
 						<goals>
 							<goal>site</goal>
 						</goals>

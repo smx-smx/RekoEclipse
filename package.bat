@@ -1,5 +1,8 @@
 cd RekoEclipse.dependencies
-mvn p2:site
+mvn package
+cd ..
+cd RekoEclipse.product
+mvn package
 cd ..
 
 mvn install

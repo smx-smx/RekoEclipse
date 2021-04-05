@@ -21,7 +21,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.e4.core.di.extensions,
  org.eclipse.e4.core.di.annotations,
  org.eclipse.e4.ui.model.workbench,
- org.eclipse.e4.ui.di
+ org.eclipse.e4.ui.di,
+ com.google.gson;bundle-version="2.8.6",
+ com.microsoft.signalr;bundle-version="3.0.0",
+ io.reactivex.rxjava2.rxjava;bundle-version="2.2.3"
 Import-Package: javax.annotation;version="1.2.0",
  javax.inject;version="1.0.0"
 Bundle-ActivationPolicy: lazy

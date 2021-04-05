@@ -7,7 +7,6 @@ package rekoeclipse.services;
 
 import com.microsoft.signalr.HubConnection;
 import com.microsoft.signalr.HubConnectionBuilder;
-import io.reactivex.Completable;
 import javax.inject.Singleton;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
