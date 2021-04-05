@@ -1,8 +1,7 @@
-cd RekoEclipse.dependencies
-mvn package
-cd ..
-cd RekoEclipse.product
-mvn package
+cd ./RekoEclipse.dependencies
+call mvn package
+cd ../RekoEclipse.product
+call mvn package
 cd ..
 
-mvn install
+call mvn install
